@@ -1,10 +1,6 @@
 import { boot } from 'quasar/wrappers';
 import axios, { AxiosInstance } from 'axios';
 
-import {
-  Quasar,
-  Dialog
-} from 'quasar'
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $axios: AxiosInstance;
@@ -20,12 +16,6 @@ declare module '@vue/runtime-core' {
 const api = axios.create({ baseURL: 'https://api.example.com' });
 
 export default boot(({ app }) => {
-  app.use(Quasar, {
-    plugins: {
-      Dialog
-    }
-  })
-  console.warn('[Quasar]', 'Quasar has been loaded');
 
   // for use inside Vue files (Options API) through this.$axios and this.$api
 
